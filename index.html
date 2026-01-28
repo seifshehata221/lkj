@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoodCraft - Premium Furniture & Wood Accessories</title>
+    <meta name="description" content="Discover premium furniture, mobile accessories, and exquisite wood craftsmanship. Quality furniture for every room in your home.">
+    <meta name="keywords" content="furniture, wood accessories, mobile accessories, home decor, wooden furniture, modern furniture">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+    
+</head>
+
+<body class="font-inter bg-light text-dark min-h-screen">
+<header class="bg-white shadow-sm fixed w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2 flex-shrink-0 ml-2 mr-2">
+            <div class="bg-[#8B4513] p-2 rounded-lg">
+                <i class="fas fa-chair text-white"></i>
+                <a href="pages/cart.html" class="relative p-2 text-gray-600 hover:text-primary transition"></a>
+            </div>
+            <span class="text-xl font-bold text-[#2C1810]">WoodCraft</span>
+        </div>
+
+   <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse font-medium text-gray-700 items-center">
+    <a href="./cart & sign up/Shop.html?cat=all" data-key="nav_home" class="hover:text-[#8B4513] transition-colors">Home</a>
+    <a href="./cart & sign up/Shop.html?cat=furniture" data-key="nav_furniture" class="hover:text-[#8B4513] transition-colors">Furniture</a>
+    <a href="./cart & sign up/Shop.html?cat=wood" data-key="nav_wood" class="hover:text-[#8B4513] transition-colors">Wood</a>
+    <a href="./cart & sign up/Shop.html?cat=accessories" data-key="nav_mobile" class="hover:text-[#8B4513] transition-colors">Mobile Accessories</a>
+</nav>
+
+        <div class="flex items-center space-x-3 rtl:space-x-reverse flex-shrink-0">
+            <div class="relative flex items-center">
+                <input id="headerSearchInput" type="text" data-key="search_placeholder" placeholder="Search..." 
+                       class="w-0 opacity-0 transition-all duration-300 border-b border-primary outline-none px-2 py-1 text-sm bg-transparent focus:w-40">
+                <button id="openSearchBtn" class="p-2 text-gray-700 hover:text-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <button id="langSwitcher" class="flex items-center gap-2 p-2 bg-gray-50 hover:bg-gray-100 rounded-md border border-gray-200">
+                <i class="fas fa-globe text-[#8B4513]"></i>
+                <span id="langText" class="text-xs font-bold uppercase">العربية</span>
+            </button>
+<a href="./cart & sign up/ca.html" class="p-2 text-gray-700 hover:text-[#8B4513]">
+        <i class="fas fa-user text-lg"></i>
+    </a>
+
+    <a href="./cart & sign up/cart.html" id="cartBtn" class="p-2 text-gray-700 hover:text-[#8B4513 relative">
+    <i class="fas fa-shopping-cart text-lg"></i>
+    <span id="cart-count" class="absolute top-1 right-1 bg-[#D46B28] text-white text-[9px] font-bold px-1 rounded-full shadow-sm">0</span>
+</a>
+            <button id="mobileMenuBtn" class="lg:hidden p-2 text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+
+   
+
+    
+</div>
+        </div>
+    </div>
+
+    
+    <div id="mobileMenu" class="fixed inset-y-0 right-0 w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-[60] lg:hidden">
+        <div class="flex justify-between items-center p-6 border-b border-gray-100">
+            <span class="font-bold text-primary">Menu</span>
+            <button id="closeMenu" class="text-gray-500 hover:text-red-500 transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col py-4">
+            <li class="border-b border-gray-50">
+                <a href="./cart & sign up/Shop.html" onclick="changeCategoryStyle('all')" data-key="nav_home" class="block px-8 py-4 text-gray-700 hover:bg-gray-50 hover:text-primary transition">Home</a>
+            </li>
+            <li class="border-b border-gray-50">
+                <a href="./cart & sign up/Shop.html" onclick="changeCategoryStyle('furniture')" data-key="nav_furniture" class="block px-8 py-4 text-gray-700 hover:bg-gray-50 hover:text-primary transition">Furniture</a>
+            </li>
+            <li class="border-b border-gray-50">
+                <a href="./cart & sign up/Shop.html" onclick="changeCategoryStyle('wood')" data-key="nav_wood" class="block px-8 py-4 text-gray-700 hover:bg-gray-50 hover:text-primary transition">Wood Accessories</a>
+            </li>
+            <li>
+                <a href="./cart & sign up/Shop.html" onclick="changeCategoryStyle('accessories')" data-key="nav_mobile" class="block px-8 py-4 text-gray-700 hover:bg-gray-50 hover:text-primary transition">Mobile Accessories</a>
+            </li>
+        </ul>
+    </div>
+</header>
+    <section class="hero-gradient pt-32 pb-12 md:pt-48 md:pb-20 bg-[#FAF3E0]">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+          <div class="animate-fade-in text-center order-2 lg:order-1 px-4">
+    <h2 data-key="hero_title" class="text-4xl md:text-5xl lg:text-6xl font-playfair font-black text-[#2C1810] mb-8 leading-tight text-center mx-auto max-w-4xl">
+        Discover our exclusive collection of premium furniture, exquisite wood accessories, and stylish mobile accessories. Each piece tells a story of craftsmanship and quality. <br> Designed for Living
+    </h2>
+
+    <div class="flex justify-center items-center gap-6">
+        <button data-key="view_coll" class="border-2 border-[#8B4513] text-[#4A2608] px-10 py-4 rounded-full font-bold hover:bg-[#FAF3E0] transition shadow-sm">
+            View Collection
+        </button>
+
+        <button data-key="shop_now" class="bg-[#8B4513] text-white px-10 py-4 rounded-full font-bold shadow-xl hover:bg-[#6F370F] transition transform hover:scale-105">
+            Shop Now
+        </button>
+    </div>
+</div>
+
+            <div class="animate-slide-up order-1 lg:order-2">
+                <div class="relative px-2">
+                    <img 
+                        src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Green Modern Sofa" 
+                        class="rounded-[2.5rem] shadow-2xl w-full object-cover h-[250px] md:h-[450px] lg:h-[550px]"
+                    >
+                    <div class="absolute -bottom-4 right-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-[#8B4513]">+500</div>
+                            <div class="text-gray-500 text-[10px] font-medium leading-none">Happy Customers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <section class="py-16 bg-white">
+    <div id="products-display" class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 data-key="cat_title" class="text-3xl md:text-4xl font-playfair font-bold text-dark mb-4">Shop by Category</h2>
+            <p data-key="cat_subtitle" class="text-gray-600">Explore our range of premium products</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div onclick="changeCategoryStyle('furniture')" class="cursor-pointer bg-[#FAF3E0] rounded-2xl p-8 text-center transition-all hover:shadow-md">
+                <div class="w-16 h-16 bg-[#EBDDB7] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-couch text-[#5D3A1A] text-2xl"></i>
+                </div>
+                <h3 data-key="nav_furniture" class="text-xl font-bold mb-3">Furniture</h3>
+                <a href="./cart & sign up/Shop.html?cat=all" class="text-secondary font-medium hover:underline flex items-center justify-center">
+                    <span data-key="explore">Explore</span> <i class="fas fa-chevron-right mx-1"></i>
+                </a>
+            </div>
+            <div onclick="changeCategoryStyle('wood')" class="cursor-pointer bg-[#FAF3E0] rounded-2xl p-8 text-center transition-all hover:shadow-md">
+                <div class="w-16 h-16 bg-[#EBDDB7] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-tree text-[#5D3A1A] text-2xl"></i>
+                </div>
+                <h3 data-key="nav_wood" class="text-xl font-bold mb-3">Wood Accessories</h3>
+                <a href="./cart & sign up/Shop.html?cat=all" class="text-secondary font-medium hover:underline flex items-center justify-center">
+                    <span data-key="explore">Explore</span> <i class="fas fa-chevron-right mx-1"></i>
+                </a>
+            </div>
+            <div onclick="changeCategoryStyle('accessories')" class="cursor-pointer bg-[#FAF3E0] rounded-2xl p-8 text-center transition-all hover:shadow-md">
+                <div class="w-16 h-16 bg-[#EBDDB7] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-mobile-alt text-[#5D3A1A] text-2xl"></i>
+                </div>
+                <h3 data-key="nav_mobile" class="text-xl font-bold mb-3">Mobile Accessories</h3>
+                <a href="./cart & sign up/Shop.html?cat=all" class="text-secondary font-medium hover:underline flex items-center justify-center">
+                    <span data-key="explore">Explore</span> <i class="fas fa-chevron-right mx-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-[#2A1A10] text-white py-16">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="space-y-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <i class="fas fa-chair text-[#D4A373] text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-playfair">Wood<span class="text-[#D4A373]">Craft</span></h3>
+                </div>
+                <p data-key="footer_desc" class="text-gray-400 leading-relaxed">Crafting beautiful furniture and accessories since 2010. Quality, sustainability, and design excellence.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4A373] transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4A373] transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4A373] transition"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#D4A373] transition"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div>
+    <h4 data-key="footer_quick" class="text-lg font-bold mb-8 text-left rtl:text-right">Quick Links</h4>
+    <ul class="space-y-4 text-gray-400 text-left rtl:text-right">
+                    <li><a href="#" data-key="nav_home" class="hover:text-[#D4A373] transition">Home</a></li>
+                    <li><a href="#" data-key="footer_all_products" class="hover:text-[#D4A373] transition">All Products</a></li>
+                    <li><a href="#" data-key="footer_new_arrivals" class="hover:text-[#D4A373] transition">New Arrivals</a></li>
+                    <li><a href="#" data-key="footer_best_sellers" class="hover:text-[#D4A373] transition">Best Sellers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 data-key="footer_service" class="text-lg font-bold mb-8">Customer Service</h4>
+                <ul class="space-y-4 text-gray-400">
+                    <li><a href="#" data-key="footer_contact_us" class="hover:text-[#D4A373] transition">Contact Us</a></li>
+                    <li><a href="#" data-key="footer_shipping" class="hover:text-[#D4A373] transition">Shipping Policy</a></li>
+                    <li><a href="#" data-key="footer_returns" class="hover:text-[#D4A373] transition">Returns & Exchanges</a></li>
+                    <li><a href="#" data-key="footer_faq" class="hover:text-[#D4A373] transition">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 data-key="footer_contact_title" class="text-lg font-bold mb-8">Contact Us</h4>
+                <ul class="space-y-4 text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-[#D4A373] mt-1"></i>
+                        <span data-key="footer_address">123 Furniture Street, Design District, Cairo, Egypt</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-[#D4A373]"></i>
+                        <span dir="ltr">+20 123 456 7890</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-[#D4A373]"></i>
+                        <span>info@woodcraft.com</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-clock text-[#D4A373]"></i>
+                        <span data-key="footer_work_hours">Mon-Sat: 9AM - 8PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+            <p data-key="footer_rights">© 2024 WoodCraft. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" data-key="footer_privacy" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" data-key="footer_terms" class="hover:text-white transition">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-dark text-white p-4 shadow-lg z-50 hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm">We use cookies to enhance your experience. <a href="#" class="text-secondary underline">Cookie Policy</a>.</p>
+            <div class="flex space-x-4">
+                <button id="acceptCookies" class="bg-secondary text-white px-6 py-2 rounded-full text-sm font-medium">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+
+</body>
+</html>

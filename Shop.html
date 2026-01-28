@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المتجر - WoodCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="New Text Document.css">
+</head>
+<body class="bg-[#FAF3E0] font-cairo min-h-screen">
+
+    <div class="container mx-auto p-8 flex flex-wrap gap-4 justify-center mt-10">
+        <button onclick="displayProducts('all')" class="bg-[#8B4513] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#2C1810] transition-all">الكل</button>
+        <button onclick="displayProducts('furniture')" class="bg-white text-[#8B4513] border-2 border-[#8B4513] px-8 py-3 rounded-full font-bold hover:bg-[#8B4513] hover:text-white transition-all">الأثاث</button>
+        <button onclick="displayProducts('wood')" class="bg-white text-[#8B4513] border-2 border-[#8B4513] px-8 py-3 rounded-full font-bold hover:bg-[#8B4513] hover:text-white transition-all">إكسسوارات الخشب</button>
+    </div>
+
+    <div id="shop-grid" class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-6">
+        </div>
+
+         <div class="pt-2 space-y-2">
+    <a href="../index.html" class="text-[#8B4513] hover:underline font-medium text-sm flex items-center justify-center gap-2 py-2" data-i18n="back_home">
+        <i data-feather="home" class="w-4 h-4"></i>
+        Back to Main Screen
+    </a>
+</div>
+
+    <script src="../main.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // تشغيل الصفحة فور التحميل
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof displayProducts === 'function') {
+                displayProducts('all');
+            }
+            if (typeof checkAdminStatus === 'function') {
+                checkAdminStatus();
+            }
+        });
+    </script>
+</body>
+</html>

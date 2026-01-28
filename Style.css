@@ -1,0 +1,64 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+        .hero-gradient {
+            background: linear-gradient(135deg, #FAF3E0 0%, #F5DEB3 100%);
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.15);
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #8B4513;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 1. ستايل الأثاث: كروت فخمة وكبيرة */
+.furniture-style .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* كروت كبيرة */
+    gap: 30px;
+}
+.furniture-style .product-card {
+    background-color: #FDF5E6; /* خلفية كريمي دافئة */
+    border: none;
+    text-align: center;
+}
+
+/* 2. ستايل الخشب: عرض تفصيلي (قائمة) */
+.wood-style .product-grid {
+    grid-template-columns: 1fr; /* صف واحد تحت بعض */F
+}
+.wood-style .product-card {
+    flex-direction: row; /* الصورة بجانب النص */
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+/* 3. ستايل الإكسسوارات: شبكة مكثفة */
+.accessories-style .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* كروت صغيرة */
+    gap: 15px;
+}
+.accessories-style .product-card img {
+    height: 150px; /* تصغير الصور */
+}
+    

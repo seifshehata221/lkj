@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج إدخال البيانات</title>
+    <meta name="description" content="صفحة إدخال البيانات مع نموذج متكامل">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="New Text Document.css">
+</head>
+<body class="min-h-screen bg-gray-50 font-sans">
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary" data-key="add_data_title">نظام إدارة البيانات</h1>
+            <div class="flex space-x-4 space-x-reverse">
+                <a href="index.html" class="text-gray-600 hover:text-primary" data-key="nav_home">الرئيسية</a>
+                <a href="#" class="text-gray-600 hover:text-primary" data-key="nav_view">عرض البيانات</a>
+                <a href="#" class="text-primary font-medium" data-key="nav_add">إضافة بيانات</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2" data-key="add_data_title">نموذج إدخال بيانات جديد</h2>
+            
+            <form id="dataForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1" data-key="full_name_label">الاسم الكامل</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="أدخل اسمك الكامل"
+                            data-key="full_name_placeholder"
+                            class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
+                            required
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1" data-key="email_label">البريد الإلكتروني</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1" data-key="phone_label">رقم الهاتف</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
+                            required
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="gender" class="block text-sm font-medium text-gray-700 mb-1" data-key="gender_label">الجنس</label>
+                        <select 
+                            id="gender" 
+                            name="gender" 
+                            class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        >
+                            <option value="" data-key="gender_placeholder">اختر الجنس</option>
+                            <option value="male" data-key="male">ذكر</option>
+                            <option value="female" data-key="female">أنثى</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1" data-key="address_label">العنوان</label>
+                    <textarea 
+                        id="address" 
+                        name="address" 
+                        rows="3" 
+                        class="form-input w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    ></textarea>
+                </div>
+                
+                <div class="pt-4 border-t">
+                    <button 
+                        type="submit" 
+                        class="bg-primary hover:bg-secondary text-white font-medium py-2 px-6 rounded-md transition duration-200"
+                    >
+                        <i class="fas fa-save mr-2"></i><span data-key="save_btn">حفظ البيانات</span>
+                    </button>
+                    <button 
+                        type="reset" 
+                        class="mr-4 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-6 rounded-md transition duration-200"
+                    >
+                        <i class="fas fa-undo mr-2"></i><span data-key="reset_btn">إعادة تعيين</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 mt-12">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p data-key="footer_rights">جميع الحقوق محفوظة &copy; 2023 نظام إدارة البيانات</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script> <script src="script.js"></script>
+    <script>
+       (function() {
+        function applyLang() {
+            // جلب اللغة من localStorage أو اعتماد العربية كافتراضي
+            const savedLang = localStorage.getItem('language') || 'ar';
+            
+            if (typeof updateContent === 'function') {
+                updateContent(savedLang);
+            } else {
+                // إذا لم تكن الدالة قد حملت بعد، انتظر ثانية وحاول مجدداً
+                setTimeout(applyLang, 100);
+            }
+        }
+        
+        // المحاولة عند التحميل المبدئي وعند اكتمال كل شيء
+        applyLang();
+        window.addEventListener('load', applyLang);
+        // مستمع لضمان التحديث إذا تغيرت اللغة من صفحة أخرى
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'language') applyLang();
+        });
+    })();
+    </script>
+</body>
+</html>
